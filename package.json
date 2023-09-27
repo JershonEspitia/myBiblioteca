@@ -1,0 +1,16 @@
+{
+  "name": "mybiblioteca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "json-server --watch db.json --port 5058 --host 127.0.0.1"
+  },
+  "keywords": [],
+  "author": "JershonEspitia",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "0.17.3"
+  }
+}
