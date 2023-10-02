@@ -1,40 +1,40 @@
-const getData = async () => {
-  let res = await (await fetch("http://127.0.0.1:5058/libros")).json();
-  console.log(res);
-};
+// const getData = async () => {
+//   let res = await (await fetch("http://127.0.0.1:5010/libros")).json();
+//   console.log(res);
+// };
 
-// getData();
+// // getData();
 
-const postData = async () => {
-    let config = {
-        method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({name: "Jershon",edad: 23})
-    }
-    let res = await(await fetch("http://127.0.0.1:5058/libros", config)).json();
-    console.log(res)
-};
+// const postData = async () => {
+//     let config = {
+//         method: "POST",
+//         headers: {"Content-Type":"application/json"},
+//         body: JSON.stringify({name: "Jershon",edad: 23})
+//     }
+//     let res = await(await fetch("http://127.0.0.1:5010/libros", config)).json();
+//     console.log(res)
+// };
 
-postData();
+// postData();
 
-const putData = async()=>{
-    let config = {
-        method: "PUT",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({name: "Orlando",edad: 20})
-    }
-    let res = await(await fetch("http://127.0.0.1:5058/libros/2", config)).json();
-    console.log(res)
-};
+// const putData = async()=>{
+//     let config = {
+//         method: "PUT",
+//         headers: {"Content-Type":"application/json"},
+//         body: JSON.stringify({name: "Orlando",edad: 20})
+//     }
+//     let res = await(await fetch("http://127.0.0.1:5010/libros/2", config)).json();
+//     console.log(res)
+// };
 
-// putData();
+// // putData();
 
-const delData = async()=>{
-    let config = {
-        method: "DELETE"
-    }
-    let res = await(await fetch("http://127.0.0.1:5058/libros/2", config)).json();
-    console.log(res)
-}
+// const delData = async()=>{
+//     let config = {
+//         method: "DELETE"
+//     }
+//     let res = await(await fetch("http://127.0.0.1:5010/libros/2", config)).json();
+//     console.log(res)
+// }
 
-// delData();
+// // delData();
