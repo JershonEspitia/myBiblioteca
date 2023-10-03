@@ -2,7 +2,19 @@
   "categoria": [],
   "editorial": [],
   "estado-libro": [],
-  "libro": [],
+  "libro": [
+    {
+      "id": 1,
+      "autorId": 11,
+      "categoriaId": 11,
+      "editorialId": 1,
+      "titulo": "Mi libro 3",
+      "fechaLanzamiento": "2023-04-02",
+      "isbn": "isbn1",
+      "numPaginacion": 120,
+      "estadoId": 1
+    }
+  ],
   "prestamo": [],
   "reserva": [],
   "autor": [],
