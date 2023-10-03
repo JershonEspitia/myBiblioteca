@@ -15,6 +15,14 @@ export const getAll = async () => {
   return res;
 };
 
+export const deleteOne = async (id) => {
+  if (typeof id !== "number")
+    return { status: 400, message: `El dato ${id} no cumple con el formato` };
+  config.method = "DELETE";
+  let res = await (await fetch(`${uri}${endPoint}${id}`, config)).json();
+  return res;
+};
+
 export const postAll = async (obj) => {
 
   const value = validationCategoria(obj, "POST");
@@ -28,14 +36,6 @@ export const postAll = async (obj) => {
   } else {
     return "No se pudo realizar el POST";
   }
-};
-
-export const deleteOne = async (id) => {
-  if (typeof id !== "number")
-    return { status: 400, message: `El dato ${id} no cumple con el formato` };
-  config.method = "DELETE";
-  let res = await (await fetch(`${uri}${endPoint}${id}`, config)).json();
-  return res;
 };
 
 export const putOne = async (obj = {id: -999, name: -999}) => {

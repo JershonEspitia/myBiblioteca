@@ -1,25 +1,8 @@
 {
-  "categoria": [
-    {
-      "name": "Terror",
-      "id": 1
-    }
-  ],
+  "categoria": [],
   "editorial": [],
   "estado-libro": [],
-  "libro": [
-    {
-      "id": 1,
-      "autorId": 11,
-      "categoriaId": 11,
-      "editorialId": 1,
-      "titulo": "Mi libro 3",
-      "fechaLanzamiento": "2023-04-02",
-      "isbn": "isbn1",
-      "numPaginacion": 120,
-      "estadoId": 1
-    }
-  ],
+  "libro": [],
   "prestamo": [],
   "reserva": [],
   "autor": [],

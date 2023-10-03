@@ -1,5 +1,6 @@
-export const validationLibro = (obj, method)=>{
+export const validationLibro = (obj={}, method)=>{
 
+    if(obj.constructor.name !== "Object" || Object.keys(obj).length === 0) return { status: 400, message: `Por favor ingrese los datos`};
     const {id, autorId, categoriaId, editorialId, titulo, fechaLanzamiento, isbn, numPaginacion, estadoId} = obj;
     
     let date = new Date(fechaLanzamiento);
