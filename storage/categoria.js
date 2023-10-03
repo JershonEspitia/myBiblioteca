@@ -1,8 +1,8 @@
 import { env } from "../config.js";
-import { validationLibro } from "../storage/validations.js";
+import { validationCategoria } from "../storage/validations.js";
 
 const uri = `${env.ssl + env.hostName}:${env.port}`;
-const endPoint = "/libro/"
+const endPoint = "/categoria/"
 const config = {
   method: undefined,
   headers: { "Content-Type": "application/json" },
@@ -17,7 +17,7 @@ export const getAll = async () => {
 
 export const postAll = async (obj) => {
 
-  const value = validationLibro(obj, "POST");
+  const value = validationCategoria(obj, "POST");
   console.log(value);
 
   if (value == true) {
@@ -38,9 +38,9 @@ export const deleteOne = async (id) => {
   return res;
 };
 
-export const putOne = async (obj = {id: -999, autorId: -999, categoriaId: -999, editorialId: -999, titulo: -999, fechaLanzamiento: -999, isbn: -999, numPaginacion: -999, estadoId: -999}) => {
+export const putOne = async (obj = {id: -999, name: -999}) => {
 
-  const value = validationLibro(obj);
+  const value = validationCategoria(obj);
   console.log(value);
   
   if (value === true) {
@@ -55,6 +55,6 @@ export const putOne = async (obj = {id: -999, autorId: -999, categoriaId: -999, 
 
 // LLAMADO A LOS METODOS
 // console.log(await getAll());
-// console.log(await postAll({autorId: 1, categoriaId: 1, editorialId: 1, titulo: "Mi libro", fechaLanzamiento: "2023-04-02", isbn: "isbn1", numPaginacion: 120, estadoId: 1}));
+// console.log(await postAll({name: 1}));
 // console.log(await deleteOne(1));
-// console.log(await putOne({id: 1, autorId: 11, categoriaId: 11, editorialId: 1, titulo: "Mi libro 3", fechaLanzamiento: "2023-04-02", isbn: "isbn1", numPaginacion: 120, estadoId: 1}));
+// console.log(await putOne({id: 1, name: "Comedy"}));

@@ -1,5 +1,10 @@
 {
-  "categoria": [],
+  "categoria": [
+    {
+      "name": "Terror",
+      "id": 1
+    }
+  ],
   "editorial": [],
   "estado-libro": [],
   "libro": [

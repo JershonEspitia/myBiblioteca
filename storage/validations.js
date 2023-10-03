@@ -36,3 +36,17 @@ export const validationLibro = (obj, method)=>{
     return true;
 };
 
+export const validationCategoria = (obj, method)=>{
+
+    const {id, name} = obj;
+
+    if (method !== "POST") {
+        if (!id) return { status: 400, message: `Por favor ingrese el id.`};
+        if (typeof id !== "number") return { status: 400, message: `El dato (id) ${id} no cumple con el formato`};
+    }
+        
+    if (!name) return { status: 400, message: `Por favor ingrese el nombre de la categoria.`}
+    if (typeof name !== "string") return { status: 400, message: `El dato (nombre) ${name} no cumple con el formato`};
+
+    return true;
+};
