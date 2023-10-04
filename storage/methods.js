@@ -10,10 +10,10 @@ const config = {
 };
 
 const methods = {
-    get: "GET",
-    del: "DELETE",
-    post: "POST",
-    put: "PUT",
+  get: "GET",
+  del: "DELETE",
+  post: "POST",
+  put: "PUT",
 };
 
 export const getOne = async (endPoint, id) => {
@@ -37,14 +37,11 @@ export const deleteOne = async (endPoint, id) => {
 };
 
 export const postAll = async (endPoint, attributes, obj) => {
-    
-  const value = validationObject(attributes, obj, methods.post);
-  console.log(value[0]);
-  console.log(value[1]);
+  const value = validationObject(attributes, obj);
 
-  if (value[0] == true) {
+  if (value) {
     config.method = methods.post;
-    config.body = JSON.stringify(value[1]);
+    config.body = JSON.stringify(value);
     let res = await (await fetch(`${uri}${endPoint}`, config)).json();
     console.log("Registro exitoso.");
     return res;
@@ -53,25 +50,17 @@ export const postAll = async (endPoint, attributes, obj) => {
   }
 };
 
-export const putOne = async (endPoint,
-  obj = {
-    id: -999,
-    autorId: -999,
-    categoriaId: -999,
-    editorialId: -999,
-    titulo: -999,
-    fechaLanzamiento: -999,
-    isbn: -999,
-    numPaginacion: -999,
-    estadoId: -999,
-  }
-) => {
-  const value = validationLibro(obj);
+export const putOne = async ({endPoint, attributes, obj}) => {
+
+  console.log(obj.id)
+  if(!obj.id) return { status: 400, message: `Debe ingresar el id.`};
+
+  const value = validationObject(attributes, obj);
   console.log(value);
 
-  if (value === true) {
+  if (value) {
     config.method = methods.put;
-    config.body = JSON.stringify(obj);
+    config.body = JSON.stringify(value);
     let res = await (await fetch(`${uri}${endPoint}${obj.id}`, config)).json();
     return res;
   } else {
