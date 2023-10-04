@@ -19,32 +19,27 @@ const attributes = {
 
 const endPoint = "/libro/";
 
-// LLAMADO A LOS METODOS
+// ********** LLAMADO A LOS METODOS **********
 
-// console.log(await getOne(endPoint, 2));
+let obj = {
+  autorId: 2,
+  categoriaId: 1,
+  editorialId: 1,
+  titulo: "Titulitoooo",
+  fechaLanzamiento: "2023-10-05",
+  isbn: "isbn 20",
+  id: 1
+};
 
-// console.log(await getAll(endPoint));
+// console.log(await getOne({endPoint, id: 2}));
 
-// console.log(await deleteOne(endPoint, 1));
+// console.log(await getAll({endPoint}));
+
+// console.log(await deleteOne({endPoint, id: 1}));
 
 // console.log(
-//   await postAll(endPoint, attributes, {
-//     autorId: 1,
-//     categoriaId: 1,
-//     editorialId: 1,
-//     titulo: "Titulo libro",
-//     fechaLanzamiento: "2023-05-05",
-//     isbn: "isbn 1",
-//     numPaginacion: 1,
-//     estadoId: 1,
-//     nombre: "jershon",
-//     camina: 123
-//   })
+//   await postAll({endPoint, attributes, obj})
 // );
-
-const  obj = {
-  id: 1
-}
 
 console.log(
   await putOne({endPoint, attributes, obj})

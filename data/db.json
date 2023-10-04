@@ -4,12 +4,12 @@
   "estado-libro": [],
   "libro": [
     {
-      "autorId": 1,
+      "autorId": 2,
       "categoriaId": 1,
       "editorialId": 1,
-      "titulo": "Titulo libro",
-      "fechaLanzamiento": "2023-05-05",
-      "isbn": "isbn 1",
+      "titulo": "Titulitoooo",
+      "fechaLanzamiento": "2023-10-05",
+      "isbn": "isbn 20",
       "numPaginacion": 1,
       "estadoId": 1,
       "id": 1
