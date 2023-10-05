@@ -44,12 +44,12 @@ export const postAll = async ({endPoint, attributes, obj}) => {
   if(!endPoint) return { status: 400, message: `Por favor ingrese el endPoint` };
   if(!attributes) return { status: 400, message: `Por favor ingrese los atributos` };
 
-  const value = validationObject({attributes, obj});
-  console.log(value);
+  const body = validationObject({attributes, obj});
+  if(body.status) { console.log(body) }
 
-  if (value[1] === true) {
+  if (body[1] === true) {
     config.method = methods.post;
-    config.body = JSON.stringify(value[0]);
+    config.body = JSON.stringify(body[0]);
     let res = await (await fetch(`${url}${endPoint}`, config)).json();
     console.log("Registro exitoso.");
     return res;
@@ -63,18 +63,16 @@ export const putOne = async ({endPoint, attributes, obj}) => {
   if(!attributes) return { status: 400, message: `Por favor ingrese los atributos` };
   if(!obj.id) return { status: 400, message: `El libro NO tiene id` };
 
-  const value = validationObject({attributes, obj, method: methods.put});
-  console.log(value);
+  const body = validationObject({attributes, obj, method: methods.put});
+  if(body.status) { console.log(body) }
 
-  if (value[1] === true) {
+  if (body[1]) {
     let resAct = await (await fetch(`${url}${endPoint}${obj.id}`)).json(); 
-    console.log("resAct", resAct);
 
-    // let newData = {...resAct, ...value[0]}
-    // obj = {...all, ...objUpdate};
+    let newData = {...resAct, ...body[0]}
 
     config.method = methods.put;
-    config.body = JSON.stringify(value[0]);
+    config.body = JSON.stringify(newData);
     let res = await (await fetch(`${url}${endPoint}${obj.id}`, config)).json();
     return res;
   } else {
