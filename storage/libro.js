@@ -22,8 +22,14 @@ const endPoint = "/libro/";
 // ********** LLAMADO A LOS METODOS **********
 
 let obj = {
-  autorId: 1,
-  titulo: "TITULOOOOOOOOOO",
+autorId: 2,
+categoriaId: 2,
+editorialId: 2,
+titulo: "Titulo 2",
+fechaLanzamiento: "2023-12-12",
+isbn: "isbn 2",
+numPaginacion: 100,
+estadoId: 2,
   id: 1
 };
 
@@ -33,6 +39,6 @@ let obj = {
 
 // console.log(await deleteOne({endPoint, id: 1}));
 
-// console.log(await postAll({endPoint, attributes, obj}));
+console.log(await postAll({endPoint, attributes, obj}));
 
 // console.log(await putOne({endPoint, attributes, obj}));

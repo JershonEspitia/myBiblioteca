@@ -36,3 +36,14 @@ export const validationObject = ({attributes, obj={}, method = "POST"})=>{
     
     return [body, true];
 };
+
+export const validarId = async ({obj, url}) => {
+    const arrayIds = ["autorId", "categoriaId", "editorialId", "estadoId", "usuarioId", "libroId"];
+    for(const key in obj){
+        if(arrayIds.includes(key)){
+            // console.log(url + "/" + key.split("I")[0] + "/" + obj[key]);
+            let res = await fetch(`${url}/${key === "estadoId" ? key.split("I")[0] + "-libro" : key.split("I")[0]}/${obj[key]}`)
+            if(res.ok) return { status: 400, message: ``}
+        };
+    };
+};

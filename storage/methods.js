@@ -1,5 +1,5 @@
 import url  from "../config.js";
-import { validationObject } from "../storage/validations.js";
+import { validationObject, validarId } from "../storage/validations.js";
 
 
 const config = {
@@ -46,6 +46,8 @@ export const postAll = async ({endPoint, attributes, obj}) => {
 
   const body = validationObject({attributes, obj});
   if(body.status) { console.log(body) }
+
+  validarId({obj, url});
 
   if (body[1] === true) {
     config.method = methods.post;
