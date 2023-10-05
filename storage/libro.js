@@ -33,10 +33,6 @@ let obj = {
 
 // console.log(await deleteOne({endPoint, id: 1}));
 
-// console.log(
-//   await postAll({endPoint, attributes, obj})
-// );
+// console.log(await postAll({endPoint, attributes, obj}));
 
-console.log(
-  await putOne({endPoint, attributes, obj})
-);
+// console.log(await putOne({endPoint, attributes, obj}));

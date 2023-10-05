@@ -61,7 +61,7 @@ export const postAll = async ({endPoint, attributes, obj}) => {
 export const putOne = async ({endPoint, attributes, obj}) => {
   if(!endPoint) return { status: 400, message: `Por favor ingrese el endPoint` };
   if(!attributes) return { status: 400, message: `Por favor ingrese los atributos` };
-  if(!obj.id) return { status: 400, message: `El libro NO tiene id` };
+  if(!obj.id) return { status: 400, message: `Por favor ingrese el id` };
 
   const body = validationObject({attributes, obj, method: methods.put});
   if(body.status) { console.log(body) }

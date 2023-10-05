@@ -1,7 +1,29 @@
 {
-  "categoria": [],
-  "editorial": [],
-  "estado-libro": [],
+  "categoria": [
+    {
+      "nombreCategoria": "Terror",
+      "id": 2
+    },
+    {
+      "nombreCategoria": "Comedia",
+      "id": 3
+    }
+  ],
+  "editorial": [
+    {
+      "nombreEditorial": "Editorial pepito perez",
+      "direccionEditorial": "Calle 12",
+      "telefonoEditorial": "123456",
+      "id": 1
+    }
+  ],
+  "estado-libro": [
+    {
+      "nombreEstado": "Prestado",
+      "descripcionEstado": "Se encuentra en prestamo hasta manana",
+      "id": 1
+    }
+  ],
   "libro": [
     {
       "autorId": 1,
@@ -15,8 +37,42 @@
       "id": 1
     }
   ],
-  "prestamo": [],
-  "reserva": [],
-  "autor": [],
-  "usuario": []
+  "prestamo": [
+    {
+      "usuarioId": 1,
+      "libroId": 1,
+      "fechaPrestamo": "2023-10-15",
+      "fechaDevolucion": "2023-10-20",
+      "estado": "string",
+      "id": 1
+    }
+  ],
+  "reserva": [
+    {
+      "usuarioId": 2,
+      "libroId": 1,
+      "fechaReserva": "2023-08-11",
+      "fechaReservaFin": "2023-10-15",
+      "estado": "Reservado hasta x fecha",
+      "id": 1
+    }
+  ],
+  "autor": [
+    {
+      "nombreAutor": "Jershon Orlando",
+      "apellidoAutor": "Espitia Rey",
+      "nacionalidadAutor": "Colombiano",
+      "id": 1
+    }
+  ],
+  "usuario": [
+    {
+      "nombreUsuario": "Jershon",
+      "apellidoUsuario": "Espitia",
+      "direccionUsuario": "calle 14",
+      "telefonoUsuario": "0987654321",
+      "emailUsuario": "correo@gmail.com",
+      "id": 1
+    }
+  ]
 }

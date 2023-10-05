@@ -2,11 +2,12 @@ export const validationObject = ({attributes, obj={}, method = "POST"})=>{
     if(obj.constructor.name !== "Object" || Object.keys(obj).length === 0) return { status: 400, message: `Por favor ingrese los datos`};
     
     let body = {};
+    const datePattern = /^\d{4}-\d{2}-\d{2}$/;
 
     if(method === "PUT"){
         for(const key in obj) {
             if (key in attributes) {
-                if (key === "fechaLanzamiento") {
+                if (datePattern.test(obj[key])) {
                     let date = new Date(obj[key]);
                     if (!(date instanceof Date && !isNaN(date) && date.getFullYear() <= 2040)) return { status: 400, message: `El dato (fechaLanzamiento) ${obj[key]} no cumple con el formato`};
                     body[key] = date.toISOString().split("T")[0];
