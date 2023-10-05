@@ -14,7 +14,7 @@ import {
     estado: "string",
   };
   
-  const endPoint = "/prestamo/";
+  const endPoint = "/prestamos/";
   
   // ********** LLAMADO A LOS METODOS **********
   

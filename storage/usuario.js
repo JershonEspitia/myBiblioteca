@@ -14,7 +14,7 @@ import {
     emailUsuario: "string",
   };
   
-  const endPoint = "/usuario/";
+  const endPoint = "/usuarios/";
   
   // ********** LLAMADO A LOS METODOS **********
   

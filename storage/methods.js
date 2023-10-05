@@ -45,19 +45,22 @@ export const postAll = async ({endPoint, attributes, obj}) => {
   if(!attributes) return { status: 400, message: `Por favor ingrese los atributos` };
 
   const body = validationObject({attributes, obj});
-  if(body.status) { console.log(body) }
+  console.log(body);
+  if(body.status) return body.message
 
-  validarId({obj, url});
+  let isOk = await validarId({body, url});
+  if(isOk.status) { console.log(isOk.message) }
 
-  if (body[1] === true) {
+  if (body.isOk && isOk === true) {
     config.method = methods.post;
-    config.body = JSON.stringify(body[0]);
+    config.body = JSON.stringify(body);
     let res = await (await fetch(`${url}${endPoint}`, config)).json();
     console.log("Registro exitoso.");
     return res;
   } else {
     return "No se pudo realizar el POST";
-  }
+  } 
+  
 };
 
 export const putOne = async ({endPoint, attributes, obj}) => {
@@ -68,10 +71,13 @@ export const putOne = async ({endPoint, attributes, obj}) => {
   const body = validationObject({attributes, obj, method: methods.put});
   if(body.status) { console.log(body) }
 
-  if (body[1]) {
+  let isOk = await validarId({body, url});
+  if(isOk.status) { console.log(isOk.message) }
+
+  if (isOk === true) {
     let resAct = await (await fetch(`${url}${endPoint}${obj.id}`)).json(); 
 
-    let newData = {...resAct, ...body[0]}
+    let newData = {...resAct, ...body}
 
     config.method = methods.put;
     config.body = JSON.stringify(newData);

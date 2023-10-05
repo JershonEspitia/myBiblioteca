@@ -1,15 +1,11 @@
 {
-  "categoria": [
+  "categorias": [
     {
       "nombreCategoria": "Terror",
       "id": 2
-    },
-    {
-      "nombreCategoria": "Comedia",
-      "id": 3
     }
   ],
-  "editorial": [
+  "editorials": [
     {
       "nombreEditorial": "Editorial pepito perez",
       "direccionEditorial": "Calle 12",
@@ -17,38 +13,27 @@
       "id": 1
     }
   ],
-  "estado-libro": [
+  "estados": [
     {
       "nombreEstado": "Prestado",
       "descripcionEstado": "Se encuentra en prestamo hasta manana",
       "id": 1
     }
   ],
-  "libro": [
+  "libros": [
     {
       "autorId": 1,
       "categoriaId": 1,
       "editorialId": 1,
-      "titulo": "TITULOOOOOOOOOO",
+      "titulo": "TITU-LO",
       "fechaLanzamiento": "2023-10-05",
       "isbn": "isbn 20",
       "numPaginacion": 1,
       "estadoId": 1,
       "id": 1
-    },
-    {
-      "autorId": 2,
-      "categoriaId": 2,
-      "editorialId": 2,
-      "titulo": "Titulo 2",
-      "fechaLanzamiento": "2023-12-12",
-      "isbn": "isbn 2",
-      "numPaginacion": 100,
-      "estadoId": 2,
-      "id": 2
     }
   ],
-  "prestamo": [
+  "prestamos": [
     {
       "usuarioId": 1,
       "libroId": 1,
@@ -58,7 +43,7 @@
       "id": 1
     }
   ],
-  "reserva": [
+  "reservas": [
     {
       "usuarioId": 2,
       "libroId": 1,
@@ -68,7 +53,7 @@
       "id": 1
     }
   ],
-  "autor": [
+  "autors": [
     {
       "nombreAutor": "Jershon Orlando",
       "apellidoAutor": "Espitia Rey",
@@ -76,7 +61,7 @@
       "id": 1
     }
   ],
-  "usuario": [
+  "usuarios": [
     {
       "nombreUsuario": "Jershon",
       "apellidoUsuario": "Espitia",

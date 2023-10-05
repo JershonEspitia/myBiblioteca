@@ -10,7 +10,7 @@ const attributes = {
   nombreCategoria: "string",
 };
 
-const endPoint = "/categoria/";
+const endPoint = "/categorias/";
 
 // ********** LLAMADO A LOS METODOS **********
 

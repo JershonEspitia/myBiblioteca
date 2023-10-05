@@ -34,16 +34,16 @@ export const validationObject = ({attributes, obj={}, method = "POST"})=>{
         };
     }
     
-    return [body, true];
+    return body;
 };
 
-export const validarId = async ({obj, url}) => {
+export const validarId = async ({body, url}) => {
     const arrayIds = ["autorId", "categoriaId", "editorialId", "estadoId", "usuarioId", "libroId"];
-    for(const key in obj){
+    for(const key in body){
         if(arrayIds.includes(key)){
-            // console.log(url + "/" + key.split("I")[0] + "/" + obj[key]);
-            let res = await fetch(`${url}/${key === "estadoId" ? key.split("I")[0] + "-libro" : key.split("I")[0]}/${obj[key]}`)
-            if(res.ok) return { status: 400, message: ``}
+            let res = await fetch(`${url}/${key.split("I")[0] + "s"}/${body[key]}`);
+            if(!res.ok) return { status: 400, message: `El id de ${key} NO existe.`}
         };
     };
+    return true;
 };

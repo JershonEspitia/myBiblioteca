@@ -12,7 +12,7 @@ import {
     nacionalidadAutor: "string"
   };
   
-  const endPoint = "/autor/";
+  const endPoint = "/autors/";
   
   // ********** LLAMADO A LOS METODOS **********
   

@@ -11,7 +11,7 @@ import {
     descripcionEstado: "string",
   };
   
-  const endPoint = "/estado/";
+  const endPoint = "/estados/";
   
   // ********** LLAMADO A LOS METODOS **********
   

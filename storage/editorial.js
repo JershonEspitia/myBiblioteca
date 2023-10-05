@@ -12,7 +12,7 @@ import {
     telefonoEditorial: "string"
   };
   
-  const endPoint = "/editorial/";
+  const endPoint = "/editorials/";
   
   // ********** LLAMADO A LOS METODOS **********
   

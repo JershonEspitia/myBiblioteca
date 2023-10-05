@@ -14,7 +14,7 @@ import {
     estado: "string",
   };
   
-  const endPoint = "/reserva/";
+  const endPoint = "/reservas/";
   
   // ********** LLAMADO A LOS METODOS **********
   
