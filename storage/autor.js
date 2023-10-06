@@ -17,8 +17,9 @@ import {
   // ********** LLAMADO A LOS METODOS **********
   
   let obj = {
-    nombreAutor: "Jershon Orlando",
-    apellidoAutor: "Espitia Rey",
+    nombreAutor: "Marlene",
+    apellidoAutor: "Rey",
+    nacionalidadAutor: "Frances", 
     id: 1
   };
   
@@ -28,6 +29,6 @@ import {
   
   // console.log(await deleteOne({endPoint, id: 1}));
   
-//   console.log(await postAll({endPoint, attributes, obj}));
+  // console.log(await postAll({endPoint, attributes, obj}));
   
 //   console.log(await putOne({endPoint, attributes, obj}));

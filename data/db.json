@@ -2,7 +2,7 @@
   "categorias": [
     {
       "nombreCategoria": "Terror",
-      "id": 2
+      "id": 1
     }
   ],
   "editorials": [
@@ -25,12 +25,34 @@
       "autorId": 1,
       "categoriaId": 1,
       "editorialId": 1,
-      "titulo": "TITU-LO",
-      "fechaLanzamiento": "2023-10-05",
-      "isbn": "isbn 20",
-      "numPaginacion": 1,
+      "titulo": "Titulitoooo 2",
+      "fechaLanzamiento": "2023-12-12",
+      "isbn": "isbn 2",
+      "numPaginacion": 100,
       "estadoId": 1,
       "id": 1
+    },
+    {
+      "autorId": 1,
+      "categoriaId": 1,
+      "editorialId": 1,
+      "titulo": "Titulo 2",
+      "fechaLanzamiento": "2023-12-12",
+      "isbn": "isbn 2",
+      "numPaginacion": 100,
+      "estadoId": 1,
+      "id": 2
+    },
+    {
+      "autorId": 2,
+      "categoriaId": 1,
+      "editorialId": 1,
+      "titulo": "Titulo libro",
+      "fechaLanzamiento": "2023-12-12",
+      "isbn": "isbn 2",
+      "numPaginacion": 100,
+      "estadoId": 1,
+      "id": 3
     }
   ],
   "prestamos": [
@@ -59,6 +81,12 @@
       "apellidoAutor": "Espitia Rey",
       "nacionalidadAutor": "Colombiano",
       "id": 1
+    },
+    {
+      "nombreAutor": "Marlene",
+      "apellidoAutor": "Rey",
+      "nacionalidadAutor": "Frances",
+      "id": 2
     }
   ],
   "usuarios": [

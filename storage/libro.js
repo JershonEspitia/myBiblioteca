@@ -22,10 +22,10 @@ const endPoint = "/libros/";
 // ********** LLAMADO A LOS METODOS **********
 
 let obj = {
-  autorId: 10,
+  autorId: 2,
   categoriaId: 1,
   editorialId: 1,
-  titulo: "Titulo 2",
+  titulo: "Titulitoooo 2",
   fechaLanzamiento: "2023-12-12",
   isbn: "isbn 2",
   numPaginacion: 100,
