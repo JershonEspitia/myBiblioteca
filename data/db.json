@@ -42,17 +42,6 @@
       "numPaginacion": 100,
       "estadoId": 1,
       "id": 2
-    },
-    {
-      "autorId": 2,
-      "categoriaId": 1,
-      "editorialId": 1,
-      "titulo": "Titulo libro",
-      "fechaLanzamiento": "2023-12-12",
-      "isbn": "isbn 2",
-      "numPaginacion": 100,
-      "estadoId": 1,
-      "id": 3
     }
   ],
   "prestamos": [

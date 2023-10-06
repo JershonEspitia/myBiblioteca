@@ -34,7 +34,6 @@ let obj = {
   id: 1
 };
 
-
 // console.log("LOG getOne LIBRO: ",await getOne({endPoint, id: 2}));
 
 // console.log("LOG getAll LIBRO: ",await getAll({endPoint}));
@@ -43,6 +42,6 @@ let obj = {
 
 // console.log("LOG deleteOne LIBRO: ",await deleteOne({endPoint, id: 1}));
 
-// console.log("LOG postAll LIBRO: ",await postAll({endPoint, attributes, obj}));
+console.log("LOG postAll LIBRO: ",await postAll({endPoint, attributes: {}, obj}));
 
 // console.log("LOG putOne LIBRO: ", await putOne({endPoint, attributes, obj}));

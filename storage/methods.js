@@ -16,24 +16,26 @@ const methods = {
 };
 
 export const getOne = async ({endPoint, id}) => {
-  if(!endPoint) return { status: 400, message: `Por favor ingrese el endPoint` };
-  if(!id) return { status: 400, message: `Por favor ingrese el id` };
+  if(!endPoint || endPoint.includes(" ")) return { status: 400, message: `Por favor ingrese el endPoint o un endPoint valido. valor: "${endPoint}" ` };
+  if(!id || id.includes(" ")) return { status: 400, message: `Por favor ingrese el id o un id valido. valor: "${id}" ` };
   config.method = methods.get;
   let res = await (await fetch(`${url}${endPoint}${id}`, config)).json();
+  console.log("RESSS: ",res);
   return res;
 };
 
 export const getAll = async ({endPoint}) => {
-  if(!endPoint) return { status: 400, message: `Por favor ingrese el endPoint` };
+  if(!endPoint || endPoint.includes(" ")) return { status: 400, message: `Por favor ingrese el endPoint o un endPoint valido. valor: "${endPoint}" ` };
   config.method = methods.get;
   let res = await (await fetch(`${url}${endPoint}`, config)).json();
   return res;
 };
 
-export const getRelations = async ({endPoint}) => {
+export const getRelations = async ({endPoint}) => { 
+  if(!endPoint || endPoint.includes(" ")) return { status: 400, message: `Por favor ingrese el endPoint o un endPoint valido. valor: "${endPoint}" ` };
+  
   const arrayIds = ["autorId", "categoriaId", "editorialId", "estadoId", "usuarioId", "libroId"];
   
-  if(!endPoint) return { status: 400, message: `Por favor ingrese el endPoint` };
   config.method = methods.get;
   let resOne = await (await fetch(`${url}${endPoint}`, config)).json();
 
@@ -55,8 +57,9 @@ export const getRelations = async ({endPoint}) => {
 };
 
 export const deleteOne = async ({endPoint, id}) => {
-  if(!endPoint) return { status: 400, message: `Por favor ingrese el endPoint` };
-  if(!id) return { status: 400, message: `Por favor ingrese el id` };
+  if(!endPoint || endPoint.includes(" ")) return { status: 400, message: `Por favor ingrese el endPoint o un endPoint valido. valor: "${endPoint}" ` };
+  if(!id || id.includes(" ")) return { status: 400, message: `Por favor ingrese el id o un id valido. valor: "${id}" ` };
+  
   if (typeof id !== "number")
     return { status: 400, message: `El dato ${id} no cumple con el formato` };
   config.method = methods.del;
@@ -65,11 +68,13 @@ export const deleteOne = async ({endPoint, id}) => {
 };
 
 export const postAll = async ({endPoint, attributes, obj}) => {
-  if(!endPoint) return { status: 400, message: `Por favor ingrese el endPoint` };
-  if(!attributes) return { status: 400, message: `Por favor ingrese los atributos` };
+  if(!endPoint || endPoint.includes(" ")) return { status: 400, message: `Por favor ingrese el endPoint o un endPoint valido. valor: "${endPoint}" ` };
+  console.log("attributes", attributes)
+  
+  if(!attributes || Object.keys(attributes).length === 0) return { status: 400, message: `Por favor ingrese los atributos. valor: "${attributes}" ` };
 
   const body = validationObject({attributes, obj});
-  if(body.status) return body.message
+  if(body.status) return body
 
   let isOk = await validarId({body, url});
   if(isOk.status) { return isOk.message }
@@ -87,8 +92,9 @@ export const postAll = async ({endPoint, attributes, obj}) => {
 };
 
 export const putOne = async ({endPoint, attributes, obj}) => {
-  if(!endPoint) return { status: 400, message: `Por favor ingrese el endPoint` };
-  if(!attributes) return { status: 400, message: `Por favor ingrese los atributos` };
+  if(!endPoint || endPoint.includes(" ")) return { status: 400, message: `Por favor ingrese el endPoint o un endPoint valido. valor: "${endPoint}" ` };
+  console.log("attributes", attributes)
+  if(!attributes || Object.keys(attributes).length === 0) return { status: 400, message: `Por favor ingrese los atributos. valor: "${attributes}" ` };
   if(!obj.id) return { status: 400, message: `Por favor ingrese el id` };
 
   const body = validationObject({attributes, obj, method: methods.put});
@@ -110,5 +116,3 @@ export const putOne = async ({endPoint, attributes, obj}) => {
     return "No se pudo realizar el PUT";
   }
 };
-
-console.log(await getRelations({endPoint: "/prestamos/"}))
