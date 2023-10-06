@@ -1,6 +1,7 @@
 import {
     getOne,
     getAll,
+    getRelations,
     deleteOne,
     postAll,
     putOne,
@@ -30,6 +31,8 @@ import {
   // console.log(await getOne({endPoint, id: 3}));
   
   // console.log(await getAll({endPoint}));
+
+// console.log(await getRelations({endPoint}));
   
   // console.log(await deleteOne({endPoint, id: 1}));
   

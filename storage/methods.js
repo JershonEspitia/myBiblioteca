@@ -36,7 +36,6 @@ export const getRelations = async ({endPoint}) => {
   if(!endPoint) return { status: 400, message: `Por favor ingrese el endPoint` };
   config.method = methods.get;
   let resOne = await (await fetch(`${url}${endPoint}`, config)).json();
-  console.log("resOne", resOne);
 
   let newUrl = url + "/" + endPoint.split("/")[1];
 
@@ -50,7 +49,6 @@ export const getRelations = async ({endPoint}) => {
     };
   };
 
-  console.log("url:", newUrl)
   config.method = methods.get;
   let res = await (await fetch(`${newUrl}`, config)).json();
   return res;

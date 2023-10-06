@@ -1,6 +1,7 @@
 import {
   getOne,
   getAll,
+  getRelations,
   deleteOne,
   postAll,
   putOne,
@@ -38,8 +39,10 @@ let obj = {
 
 // console.log("LOG getAll LIBRO: ",await getAll({endPoint}));
 
+// console.log("LOG getRelations LIBRO: ",await getRelations({endPoint}));
+
 // console.log("LOG deleteOne LIBRO: ",await deleteOne({endPoint, id: 1}));
 
-console.log("LOG postAll LIBRO: ",await postAll({endPoint, attributes, obj}));
+// console.log("LOG postAll LIBRO: ",await postAll({endPoint, attributes, obj}));
 
 // console.log("LOG putOne LIBRO: ", await putOne({endPoint, attributes, obj}));
