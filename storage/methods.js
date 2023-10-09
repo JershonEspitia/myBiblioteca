@@ -68,9 +68,8 @@ export const deleteOne = async ({endPoint, id}) => {
 };
 
 export const postAll = async ({endPoint, attributes, obj}) => {
-  if(!endPoint || endPoint.includes(" ")) return { status: 400, message: `Por favor ingrese el endPoint o un endPoint valido. valor: "${endPoint}" ` };
-  console.log("attributes", attributes)
-  
+  console.log("ENDPOINT:", endPoint);
+  if(!endPoint || endPoint.includes(" ")) return { status: 400, message: `Por favor ingrese el endPoint o un endPoint valido. valor: "${endPoint}" ` };  
   if(!attributes || Object.keys(attributes).length === 0) return { status: 400, message: `Por favor ingrese los atributos. valor: "${attributes}" ` };
 
   const body = validationObject({attributes, obj});
@@ -93,7 +92,6 @@ export const postAll = async ({endPoint, attributes, obj}) => {
 
 export const putOne = async ({endPoint, attributes, obj}) => {
   if(!endPoint || endPoint.includes(" ")) return { status: 400, message: `Por favor ingrese el endPoint o un endPoint valido. valor: "${endPoint}" ` };
-  console.log("attributes", attributes)
   if(!attributes || Object.keys(attributes).length === 0) return { status: 400, message: `Por favor ingrese los atributos. valor: "${attributes}" ` };
   if(!obj.id) return { status: 400, message: `Por favor ingrese el id` };
 
@@ -101,7 +99,7 @@ export const putOne = async ({endPoint, attributes, obj}) => {
   if(body.status) { console.log(body) }
 
   let isOk = await validarId({body, url});
-  if(isOk.status) { console.log(isOk.message) }
+  if(isOk.status) { console.log(isOk) }
 
   if (isOk === true) {
     let resAct = await (await fetch(`${url}${endPoint}${obj.id}`)).json(); 

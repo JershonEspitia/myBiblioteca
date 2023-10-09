@@ -6,7 +6,7 @@ import {
     putOne,
   } from "../storage/methods.js";
   
-  const attributes = {
+  export const attributes = {
     nombreUsuario: "string",
     apellidoUsuario: "string",
     direccionUsuario: "string",
@@ -14,7 +14,7 @@ import {
     emailUsuario: "string",
   };
   
-  const endPoint = "/usuarios/";
+  export const endPoint = "/usuarios/";
   
   // ********** LLAMADO A LOS METODOS **********
   

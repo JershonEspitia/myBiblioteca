@@ -6,13 +6,13 @@ import {
     putOne,
   } from "../storage/methods.js";
   
-  const attributes = {
+  export const attributes = {
     nombreEditorial: "string",
     direccionEditorial: "string",
     telefonoEditorial: "string"
   };
   
-  const endPoint = "/editorials/";
+  export const endPoint = "/editorials/";
   
   // ********** LLAMADO A LOS METODOS **********
   

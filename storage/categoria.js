@@ -6,11 +6,11 @@ import {
   putOne,
 } from "../storage/methods.js";
 
-const attributes = {
+export const attributes = {
   nombreCategoria: "string",
 };
 
-const endPoint = "/categorias/";
+export const endPoint = "/categorias/";
 
 // ********** LLAMADO A LOS METODOS **********
 

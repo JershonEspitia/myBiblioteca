@@ -7,7 +7,7 @@ import {
     putOne,
   } from "../storage/methods.js";
   
-  const attributes = {
+  export const attributes = {
     usuarioId: "number",
     libroId: "number",
     fechaReserva: "date",
@@ -15,7 +15,7 @@ import {
     estado: "string",
   };
   
-  const endPoint = "/reservas/";
+  export const endPoint = "/reservas/";
   
   // ********** LLAMADO A LOS METODOS **********
   

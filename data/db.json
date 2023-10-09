@@ -3,6 +3,14 @@
     {
       "nombreCategoria": "Terror",
       "id": 1
+    },
+    {
+      "nombreCategoria": "Comedia",
+      "id": 2
+    },
+    {
+      "nombreCategoria": "Romance",
+      "id": 3
     }
   ],
   "editorials": [
@@ -11,6 +19,18 @@
       "direccionEditorial": "Calle 12",
       "telefonoEditorial": "123456",
       "id": 1
+    },
+    {
+      "nombreEditorial": "Editorial mundo",
+      "direccionEditorial": "Calle 20",
+      "telefonoEditorial": "12345674",
+      "id": 2
+    },
+    {
+      "nombreEditorial": "Editorial renacer",
+      "direccionEditorial": "Calle 90",
+      "telefonoEditorial": "73452",
+      "id": 3
     }
   ],
   "estados": [
@@ -18,6 +38,16 @@
       "nombreEstado": "Prestado",
       "descripcionEstado": "Se encuentra en prestamo hasta manana",
       "id": 1
+    },
+    {
+      "nombreEstado": "Daniado",
+      "descripcionEstado": "Se encuentra daniado",
+      "id": 2
+    },
+    {
+      "nombreEstado": "Disponible",
+      "descripcionEstado": "Se encuentra disponible",
+      "id": 3
     }
   ],
   "libros": [
@@ -42,6 +72,17 @@
       "numPaginacion": 100,
       "estadoId": 1,
       "id": 2
+    },
+    {
+      "autorId": 2,
+      "categoriaId": 1,
+      "editorialId": 1,
+      "titulo": "Prueba completa",
+      "fechaLanzamiento": "2023-10-19",
+      "isbn": "isbnprueba123",
+      "numPaginacion": 120,
+      "estadoId": 1,
+      "id": 3
     }
   ],
   "prestamos": [
@@ -76,6 +117,12 @@
       "apellidoAutor": "Rey",
       "nacionalidadAutor": "Frances",
       "id": 2
+    },
+    {
+      "nombreAutor": "Diego",
+      "apellidoAutor": "Camacho",
+      "nacionalidadAutor": "Aleman",
+      "id": 3
     }
   ],
   "usuarios": [
@@ -86,6 +133,14 @@
       "telefonoUsuario": "0987654321",
       "emailUsuario": "correo@gmail.com",
       "id": 1
+    },
+    {
+      "nombreUsuario": "Orlando",
+      "apellidoUsuario": "Camacho",
+      "direccionUsuario": "calle 53",
+      "telefonoUsuario": "3526",
+      "emailUsuario": "correo2@gmail.com",
+      "id": 2
     }
   ]
 }
